@@ -17,5 +17,12 @@ let sumaPares = (numberList) => {
   }
   return pairNumbers;
 };
+let onlyString = (listaMix) => {                      //todo
+  for (let i = 0; i < listaMix.length; i++) {
+    if (typeof listaMix[i] == "string") {
+      onlyString.push(listaMix[i])
+    }
+  }
+};
 
-module.exports = { maxNumber, sumaPares };
+module.exports = { maxNumber, sumaPares, onlyString };
