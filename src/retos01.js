@@ -40,4 +40,43 @@ let namesStartWithA = (namesList) => {
   return namesListStartWithA;
 };
 
-module.exports = { maxNumber, sumaPares, toOnlyString, namesStartWithA };
+//--------------función let animalMostNamed ------------------------------
+// primero defino la función de contar
+
+let animalbuscado = "perro";
+let sumaanimal = 0;
+let animalsList = [];
+
+animalsList.forEach((animal) => {
+  if (animalbuscado == animal) {
+    sumaanimal += 1;
+  }
+});
+// fin función contar
+
+let animalMostNamed = (animalsList) => {
+  let animalMostNamedIs = 0;
+
+  animalsList.forEach((animal) => {
+    let animalbuscado = animal;
+    let sumaanimal = 0;
+
+    animalsList.forEach((animal) => {
+      if (animalbuscado == animal) {
+        sumaanimal += 1;
+      }
+    });
+  });
+  if (sumaanimal > animalMostNamedIs) {
+    animalMostNamedIs = sumaanimal;
+  }
+  return animalMostNamedIs;
+};
+
+module.exports = {
+  maxNumber,
+  sumaPares,
+  toOnlyString,
+  namesStartWithA,
+  animalMostNamed,
+};

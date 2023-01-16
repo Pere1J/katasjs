@@ -3,6 +3,7 @@ const {
   sumaPares,
   toOnlyString,
   namesStartWithA,
+  animalMostNamed,
 } = require("../src/retos01");
 
 test("debe devolver el numero mayor de un array de numeros", () => {
@@ -46,4 +47,24 @@ test("debe devolver solo strings que empiezan por -a-", () => {
 
   //THEN
   expect(sut).toEqual(expect.arrayContaining(["Andy", "Aroa"]));
+});
+
+test("dada una lista con palabras repetidas debe devolver el número de repeticiones de la palabra que más veces aparezca", () => {
+  //GIVEN
+  let animalsList = [
+    "perro",
+    "gato",
+    "perro",
+    "gato",
+    "pajaro",
+    "mono",
+    "serpiente",
+    "perro",
+  ];
+
+  //WHEN
+  let sut = animalMostNamed(animalsList);
+
+  //THEN
+  expect(sut).toBe(3);
 });
