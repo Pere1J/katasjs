@@ -17,12 +17,27 @@ let sumaPares = (numberList) => {
   }
   return pairNumbers;
 };
-let onlyString = (listaMix) => {                      //todo
+let toOnlyString = (listaMix) => {
+  let onlyString = [];
   for (let i = 0; i < listaMix.length; i++) {
     if (typeof listaMix[i] == "string") {
-      onlyString.push(listaMix[i])
+      onlyString.push(listaMix[i]);
     }
   }
+  return onlyString;
 };
 
-module.exports = { maxNumber, sumaPares, onlyString };
+let namesStartWithA = (namesList) => {
+  let namesListStartWithA = [];
+  for (let i = 0; i < namesList.length; i++) {
+    if (namesList[i].charAt(0) == "A") {
+      namesListStartWithA.push(namesList[i]);
+    }
+    if (namesList[i].charAt(0) == "a") {
+      namesListStartWithA.push(namesList[i]);
+    }
+  }
+  return namesListStartWithA;
+};
+
+module.exports = { maxNumber, sumaPares, toOnlyString, namesStartWithA };
