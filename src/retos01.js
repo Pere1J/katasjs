@@ -66,10 +66,12 @@ let animalMostNamed = (animalsList) => {
         sumaanimal += 1;
       }
     });
+
+    if (sumaanimal > animalMostNamedIs) {
+      animalMostNamedIs = sumaanimal;
+    }
   });
-  if (sumaanimal > animalMostNamedIs) {
-    animalMostNamedIs = sumaanimal;
-  }
+
   return animalMostNamedIs;
 };
 
