@@ -7,5 +7,15 @@ let maxNumber = (array) => {
   }
   return max;
 };
-let sumaPares = () => {};
+let sumaPares = (numberList) => {
+  let pairNumbers = 0;
+
+  for (const cadaItem of numberList) {
+    if (cadaItem % 2 == 0) {
+      pairNumbers += cadaItem;
+    }
+  }
+  return pairNumbers;
+};
+
 module.exports = { maxNumber, sumaPares };
