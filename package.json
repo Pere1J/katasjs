@@ -1,0 +1,14 @@
+{
+  "name": "katasjs",
+  "version": "1.0.0",
+  "description": "katas en javascripst",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "PereJosep",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
