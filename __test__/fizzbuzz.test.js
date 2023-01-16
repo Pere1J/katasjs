@@ -20,7 +20,7 @@ test("deb devolver Buzz si el numero es multiple de 5", () => {
 
 test("deb devolver FizzBuzz si el numero es multiple de 3 y 5", () => {
   //GIVEN
-  const num = 2;
+  const num = 15;
   //WHEN
   let sut = fizzbuzz(num);
   //THEN
@@ -29,7 +29,7 @@ test("deb devolver FizzBuzz si el numero es multiple de 3 y 5", () => {
 
 test("deb devolver mismo numero si el numero no es multiple de 3 y 5", () => {
   //GIVEN
-  const num = 9;
+  const num = 2;
   //WHEN
   let sut = fizzbuzz(num);
   //THEN
