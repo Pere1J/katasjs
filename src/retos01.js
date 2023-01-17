@@ -75,10 +75,22 @@ let animalMostNamed = (animalsList) => {
   return animalMostNamedIs;
 };
 
+//--------------------función ProductosMasCarosdeDiez -----------------------------
+
+let productosMasCarosDeDiez = (listaProductos) => {
+  listaProductos.filter((product) => product.precio >= 10);
+  losproductosMasCarosDeDiez = [];
+  losproductosMasCarosDeDiez.push(listaProductos.product);
+  return losproductosMasCarosDeDiez;
+};
+
+//----------------------------------------------------------------------------------
+
 module.exports = {
   maxNumber,
   sumaPares,
   toOnlyString,
   namesStartWithA,
   animalMostNamed,
+  productosMasCarosDeDiez,
 };

@@ -4,6 +4,7 @@ const {
   toOnlyString,
   namesStartWithA,
   animalMostNamed,
+  productosMasCarosDeDiez,
 } = require("../src/retos01");
 
 test("debe devolver el numero mayor de un array de numeros", () => {
@@ -67,4 +68,28 @@ test("dada una lista con palabras repetidas debe devolver el número de repetici
 
   //THEN
   expect(sut).toBe(3);
+});
+
+test('Dado un array de objetos "producto" (con nombre y precio) debe devolver un array de los objetos que sean más caros de 10.', () => {
+  //GIVEN
+  let listaProductos = [
+    {
+      nombre: "pelota",
+      precio: 10,
+    },
+    {
+      nombre: "muñeca",
+      precio: 5,
+    },
+    {
+      nombre: "cochecito",
+      precio: 25,
+    },
+  ];
+
+  //WHEN
+  let sut = productosMasCarosDeDiez(listaProductos);
+
+  //THEN
+  expect(sut).toEqual(expect.arrayContaining(["cochecito"]));
 });
