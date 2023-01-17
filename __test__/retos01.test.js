@@ -5,6 +5,7 @@ const {
   namesStartWithA,
   animalMostNamed,
   productosMasCarosDeDiez,
+  listaTareasPendientes,
 } = require("../src/retos01");
 
 test("debe devolver el numero mayor de un array de numeros", () => {
@@ -93,3 +94,27 @@ test('Dado un array de objetos "producto" (con nombre y precio) debe devolver un
   //THEN
   expect(sut).toEqual(expect.arrayContaining([{"nombre": "cochecito", "precio": 25}]));
 });
+
+test('Desarrolla una función que al darle un array de objetos ’tarea’ (con atributos de: title <string> / isDone<bool>) devuelva otra lista con solamente las tareas no terminadas.', () => {
+    //GIVEN
+    let listaTareas = [
+      {
+        title: "comprar pan",
+        isDone: true,
+      },
+      {
+        title: "vender moñeca",
+        isDone: true,
+      },
+      {
+        title: "conducir coche",
+        isDone: false,
+      },
+    ];
+  
+    //WHEN
+    let sut = listaTareasPendientes(listaTareas);
+  
+    //THEN
+    expect(sut).toEqual(expect.arrayContaining([{"title": "conducir coche", "isDone": false}]));
+})

@@ -84,6 +84,12 @@ return listaProductos.filter((product) => product.precio > 10);
 };
 
 //----------------------------------------------------------------------------------
+let listaTareasPendientes = (listaTareas) => {
+
+  return tareasPendientes = listaTareas.filter((tarea) => tarea.isDone == false);
+
+
+};
 
 module.exports = {
   maxNumber,
@@ -92,4 +98,5 @@ module.exports = {
   namesStartWithA,
   animalMostNamed,
   productosMasCarosDeDiez,
+  listaTareasPendientes,
 };
