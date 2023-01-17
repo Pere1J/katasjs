@@ -99,6 +99,15 @@ let listaUsuariosAdmin = (listaUsuarios) => {
   let adminListSorted = adminList.map((admin) => admin.nombre);
   return adminList;
 };
+
+let listaNoOrdenada = (objetosList) => {
+  let template = ``;
+  for (const item of objetosList) {
+    template += `<li id=${item.id}>${item.titulo}</li>`;
+  }
+  return template;
+};
+
 module.exports = {
   maxNumber,
   sumaPares,
@@ -109,4 +118,5 @@ module.exports = {
   listaTareasPendientes,
   listaProductosOrdenados,
   listaUsuariosAdmin,
+  listaNoOrdenada,
 };

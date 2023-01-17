@@ -8,6 +8,7 @@ const {
   listaTareasPendientes,
   listaProductosOrdenados,
   listaUsuariosAdmin,
+  listaNoOrdenada,
 } = require("../src/retos01");
 
 test("debe devolver el numero mayor de un array de numeros", () => {
@@ -194,4 +195,19 @@ test("Desarrolla una función que al darle una lista de objetos usuario (con nom
       rol: "admin",
     },
   ]);
+});
+
+test("Desarrolla una función que al pasar un array: [{},{},{}] de objetos : {id, titulo}, devuelva una cadena en forma de lista no ordenada de html. estilo ‘<li id=’valor del id’>valor del título</li>’", () => {
+  //GIVEN
+  let objetosList = [
+    { id: 1, titulo: "Uno" },
+    { id: 2, titulo: "Dos" },
+    { id: 3, titulo: "Tres" },
+  ];
+
+  //WHEN
+  let sut = listaNoOrdenada(objetosList);
+
+  //THEN
+  expect(sut).toEqual("<li id=1>Uno</li><li id=2>Dos</li><li id=3>Tres</li>");
 });
