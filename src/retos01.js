@@ -93,11 +93,11 @@ let listaProductosOrdenados = (listaProductos) => {
   return listaProductos.sort((a, b) => a.precio - b.precio);
 };
 
-let listaUsuariosAdmin=(listaUsuarios)=>{
-  let adminList = listaUsuarios.filter((user) => user.rol == "admin");   //modificar
-  adminList.sort((a, b) => a.name.localeCompare(b.name));
-  let adminListSorted = adminList.map((admin) => admin.name);
-return adminList
+let listaUsuariosAdmin = (listaUsuarios) => {
+  let adminList = listaUsuarios.filter((user) => user.rol == "admin"); //modificar
+  adminList.sort((a, b) => a.nombre.localeCompare(b.nombre));
+  let adminListSorted = adminList.map((admin) => admin.nombre);
+  return adminList;
 };
 module.exports = {
   maxNumber,

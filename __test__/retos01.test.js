@@ -184,16 +184,14 @@ test("Desarrolla una función que al darle una lista de objetos usuario (con nom
   let sut = listaUsuariosAdmin(listaUsuarios);
 
   //THEN
-  expect(sut).toEqual(
-    expect.arrayContaining([
-      {
-        nombre: "abdel",
-        rol: "admin",
-      },
-      {
-        nombre: "fadoua",
-        rol: "admin",
-      },
-    ])
-  );
+  expect(sut).toEqual([
+    {
+      nombre: "abdel",
+      rol: "admin",
+    },
+    {
+      nombre: "fadoua",
+      rol: "admin",
+    },
+  ]);
 });
