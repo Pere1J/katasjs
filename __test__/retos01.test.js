@@ -6,6 +6,7 @@ const {
   animalMostNamed,
   productosMasCarosDeDiez,
   listaTareasPendientes,
+  listaProductosOrdenados,
 } = require("../src/retos01");
 
 test("debe devolver el numero mayor de un array de numeros", () => {
@@ -92,29 +93,72 @@ test('Dado un array de objetos "producto" (con nombre y precio) debe devolver un
   let sut = productosMasCarosDeDiez(listaProductos);
 
   //THEN
-  expect(sut).toEqual(expect.arrayContaining([{"nombre": "cochecito", "precio": 25}]));
+  expect(sut).toEqual(
+    expect.arrayContaining([{ nombre: "cochecito", precio: 25 }])
+  );
 });
 
-test('Desarrolla una función que al darle un array de objetos ’tarea’ (con atributos de: title <string> / isDone<bool>) devuelva otra lista con solamente las tareas no terminadas.', () => {
-    //GIVEN
-    let listaTareas = [
+test("Desarrolla una función que al darle un array de objetos ’tarea’ (con atributos de: title <string> / isDone<bool>) devuelva otra lista con solamente las tareas no terminadas.", () => {
+  //GIVEN
+  let listaTareas = [
+    {
+      title: "comprar pan",
+      isDone: true,
+    },
+    {
+      title: "vender moñeca",
+      isDone: true,
+    },
+    {
+      title: "conducir coche",
+      isDone: false,
+    },
+  ];
+
+  //WHEN
+  let sut = listaTareasPendientes(listaTareas);
+
+  //THEN
+  expect(sut).toEqual(
+    expect.arrayContaining([{ title: "conducir coche", isDone: false }])
+  );
+});
+
+test("Desarrolla una función que al pasarle una lista de objetos producto (con nombre<string> y precio<number>) devuelva otra lista de los productos ordenados de baratos a caros.", () => {
+  //GIVEN
+  let listaProductos = [
+    {
+      nombre: "pelota",
+      precio: 10,
+    },
+    {
+      nombre: "muñeca",
+      precio: 5,
+    },
+    {
+      nombre: "cochecito",
+      precio: 25,
+    },
+  ];
+
+  //WHEN
+  let sut = listaProductosOrdenados(listaProductos);
+
+  //THEN
+  expect(sut).toEqual(
+    expect.arrayContaining([
       {
-        title: "comprar pan",
-        isDone: true,
+        nombre: "muñeca",
+        precio: 5,
       },
       {
-        title: "vender moñeca",
-        isDone: true,
+        nombre: "pelota",
+        precio: 10,
       },
       {
-        title: "conducir coche",
-        isDone: false,
+        nombre: "cochecito",
+        precio: 25,
       },
-    ];
-  
-    //WHEN
-    let sut = listaTareasPendientes(listaTareas);
-  
-    //THEN
-    expect(sut).toEqual(expect.arrayContaining([{"title": "conducir coche", "isDone": false}]));
-})
+    ])
+  );
+});

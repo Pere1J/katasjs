@@ -78,17 +78,19 @@ let animalMostNamed = (animalsList) => {
 //--------------------función ProductosMasCarosdeDiez -----------------------------
 
 let productosMasCarosDeDiez = (listaProductos) => {
-  
-return listaProductos.filter((product) => product.precio > 10);
-  
+  return listaProductos.filter((product) => product.precio > 10);
 };
 
 //----------------------------------------------------------------------------------
 let listaTareasPendientes = (listaTareas) => {
+  return (tareasPendientes = listaTareas.filter(
+    (tarea) => tarea.isDone == false
+  ));
+};
+//-------------------------------------------------------------------------------------
 
-  return tareasPendientes = listaTareas.filter((tarea) => tarea.isDone == false);
-
-
+let listaProductosOrdenados = (listaProductos) => {
+  return listaProductos.sort((a, b) => a.precio - b.precio);
 };
 
 module.exports = {
@@ -99,4 +101,5 @@ module.exports = {
   animalMostNamed,
   productosMasCarosDeDiez,
   listaTareasPendientes,
+  listaProductosOrdenados,
 };
