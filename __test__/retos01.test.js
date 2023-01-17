@@ -120,9 +120,7 @@ test("Desarrolla una función que al darle un array de objetos ’tarea’ (con 
   let sut = listaTareasPendientes(listaTareas);
 
   //THEN
-  expect(sut).toEqual(
-    expect.arrayContaining([{ title: "conducir coche", isDone: false }])
-  );
+  expect(sut).toEqual([{ title: "conducir coche", isDone: false }]);
 });
 
 test("Desarrolla una función que al pasarle una lista de objetos producto (con nombre<string> y precio<number>) devuelva otra lista de los productos ordenados de baratos a caros.", () => {
@@ -146,29 +144,27 @@ test("Desarrolla una función que al pasarle una lista de objetos producto (con 
   let sut = listaProductosOrdenados(listaProductos);
 
   //THEN
-  expect(sut).toEqual(
-    expect.arrayContaining([
-      {
-        nombre: "muñeca",
-        precio: 5,
-      },
-      {
-        nombre: "pelota",
-        precio: 10,
-      },
-      {
-        nombre: "cochecito",
-        precio: 25,
-      },
-    ])
-  );
+  expect(sut).toEqual([
+    {
+      nombre: "muñeca",
+      precio: 5,
+    },
+    {
+      nombre: "pelota",
+      precio: 10,
+    },
+    {
+      nombre: "cochecito",
+      precio: 25,
+    },
+  ]);
 });
-test ("Desarrolla una función que al darle una lista de objetos usuario (con nombre<string> y rol<string>) devuelva otra lista de los usuarios que contenga solamente los usuarios administradores (’admin’) ordenados alfabéticamente por el nombre.",()=>{
-   //GIVEN
-   let listaUsuarios = [
+test("Desarrolla una función que al darle una lista de objetos usuario (con nombre<string> y rol<string>) devuelva otra lista de los usuarios que contenga solamente los usuarios administradores (’admin’) ordenados alfabéticamente por el nombre.", () => {
+  //GIVEN
+  let listaUsuarios = [
     {
       nombre: "vanessa",
-      rol:"user",
+      rol: "user",
     },
     {
       nombre: "pere",
@@ -177,12 +173,10 @@ test ("Desarrolla una función que al darle una lista de objetos usuario (con no
     {
       nombre: "abdel",
       rol: "admin",
-
     },
     {
       nombre: "fadoua",
       rol: "admin",
-
     },
   ];
 
@@ -200,7 +194,6 @@ test ("Desarrolla una función que al darle una lista de objetos usuario (con no
         nombre: "fadoua",
         rol: "admin",
       },
-    
     ])
   );
-})
+});
