@@ -78,10 +78,9 @@ let animalMostNamed = (animalsList) => {
 //--------------------función ProductosMasCarosdeDiez -----------------------------
 
 let productosMasCarosDeDiez = (listaProductos) => {
-  listaProductos.filter((product) => product.precio >= 10);
-  losproductosMasCarosDeDiez = [];
-  losproductosMasCarosDeDiez.push(listaProductos.product);
-  return losproductosMasCarosDeDiez;
+  
+return listaProductos.filter((product) => product.precio > 10);
+  
 };
 
 //----------------------------------------------------------------------------------

@@ -91,5 +91,5 @@ test('Dado un array de objetos "producto" (con nombre y precio) debe devolver un
   let sut = productosMasCarosDeDiez(listaProductos);
 
   //THEN
-  expect(sut).toEqual(expect.arrayContaining(["cochecito"]));
+  expect(sut).toEqual(expect.arrayContaining([{"nombre": "cochecito", "precio": 25}]));
 });
