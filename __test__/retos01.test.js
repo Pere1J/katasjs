@@ -160,7 +160,7 @@ test("Desarrolla una función que al pasarle una lista de objetos producto (con 
     },
   ]);
 });
-test("Desarrolla una función que al darle una lista de objetos usuario (con nombre<string> y rol<string>) devuelva otra lista de los usuarios que contenga solamente los usuarios administradores (’admin’) ordenados alfabéticamente por el nombre.", () => {
+test("Desarrolla una función que al darle una lista de objetos usuario (con nombre<string> y rol<string>) devuelva otra lista de los usuarios que contenga solamente los usuarios administradores (admin) ordenados alfabéticamente por el nombre.", () => {
   //GIVEN
   let listaUsuarios = [
     {
@@ -197,7 +197,7 @@ test("Desarrolla una función que al darle una lista de objetos usuario (con nom
   ]);
 });
 
-test("Desarrolla una función que al pasar un array: [{},{},{}] de objetos : {id, titulo}, devuelva una cadena en forma de lista no ordenada de html. estilo ‘<li id=’valor del id’>valor del título</li>’", () => {
+test("Desarrolla una función que al pasar un array: [{},{},{}] de objetos : {id, titulo}, devuelva una cadena en forma de lista no ordenada de html. estilo <li id=valor del id>valor del título</li>", () => {
   //GIVEN
   let objetosList = [
     { id: 1, titulo: "Uno" },
@@ -209,5 +209,7 @@ test("Desarrolla una función que al pasar un array: [{},{},{}] de objetos : {id
   let sut = listaNoOrdenada(objetosList);
 
   //THEN
-  expect(sut).toEqual("<li id=1>Uno</li><li id=2>Dos</li><li id=3>Tres</li>");
+  expect(sut).toEqual(
+    "<ul><li id=1>Uno</li><li id=2>Dos</li><li id=3>Tres</li></ul>"
+  );
 });

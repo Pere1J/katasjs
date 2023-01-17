@@ -101,11 +101,11 @@ let listaUsuariosAdmin = (listaUsuarios) => {
 };
 
 let listaNoOrdenada = (objetosList) => {
-  let template = ``;
+  let template = "<ul>";
   for (const item of objetosList) {
     template += `<li id=${item.id}>${item.titulo}</li>`;
   }
-  return template;
+  return template + "</ul>";
 };
 
 module.exports = {
