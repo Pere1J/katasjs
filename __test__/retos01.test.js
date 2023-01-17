@@ -7,6 +7,7 @@ const {
   productosMasCarosDeDiez,
   listaTareasPendientes,
   listaProductosOrdenados,
+  listaUsuariosAdmin,
 } = require("../src/retos01");
 
 test("debe devolver el numero mayor de un array de numeros", () => {
@@ -162,3 +163,44 @@ test("Desarrolla una función que al pasarle una lista de objetos producto (con 
     ])
   );
 });
+test ("Desarrolla una función que al darle una lista de objetos usuario (con nombre<string> y rol<string>) devuelva otra lista de los usuarios que contenga solamente los usuarios administradores (’admin’) ordenados alfabéticamente por el nombre.",()=>{
+   //GIVEN
+   let listaUsuarios = [
+    {
+      nombre: "vanessa",
+      rol:"user",
+    },
+    {
+      nombre: "pere",
+      rol: "user",
+    },
+    {
+      nombre: "abdel",
+      rol: "admin",
+
+    },
+    {
+      nombre: "fadoua",
+      rol: "admin",
+
+    },
+  ];
+
+  //WHEN
+  let sut = listaUsuariosAdmin(listaUsuarios);
+
+  //THEN
+  expect(sut).toEqual(
+    expect.arrayContaining([
+      {
+        nombre: "abdel",
+        rol: "admin",
+      },
+      {
+        nombre: "fadoua",
+        rol: "admin",
+      },
+    
+    ])
+  );
+})

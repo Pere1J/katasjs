@@ -93,6 +93,12 @@ let listaProductosOrdenados = (listaProductos) => {
   return listaProductos.sort((a, b) => a.precio - b.precio);
 };
 
+let listaUsuariosAdmin=(listaUsuarios)=>{
+  let adminList = listaUsuarios.filter((user) => user.rol == "admin");   //modificar
+  adminList.sort((a, b) => a.name.localeCompare(b.name));
+  let adminListSorted = adminList.map((admin) => admin.name);
+return adminList
+};
 module.exports = {
   maxNumber,
   sumaPares,
@@ -102,4 +108,5 @@ module.exports = {
   productosMasCarosDeDiez,
   listaTareasPendientes,
   listaProductosOrdenados,
+  listaUsuariosAdmin,
 };
